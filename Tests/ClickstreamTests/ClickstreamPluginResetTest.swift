@@ -10,7 +10,7 @@ import XCTest
 
 class ClickstreamPluginResetTest: ClickstreamPluginTestBase {
     func testReset() {
-        analyticsPlugin.reset(onComplete: {})
+        analyticsPlugin.reset()
         XCTAssertNil(analyticsPlugin.clickstream)
         XCTAssertNil(analyticsPlugin.autoFlushEventsTimer)
         XCTAssertFalse(analyticsPlugin.isEnabled)

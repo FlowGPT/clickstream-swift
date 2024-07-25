@@ -9,19 +9,18 @@ import Amplify
 import Foundation
 
 extension AWSClickstreamPlugin {
-    
-    func identifyUser(_ identityId: String, withProfile userProfile: AnalyticsUserProfile?) {
-        if identityId == Event.User.USER_ID_EMPTY {
+    func identifyUser(userId: String, userProfile: AnalyticsUserProfile?) {
+        if userId == Event.User.USER_ID_EMPTY {
             if let attributes = userProfile?.properties {
                 for attribute in attributes {
                     analyticsClient.addUserAttribute(attribute.value, forKey: attribute.key)
                 }
             }
         } else {
-            if identityId == Event.User.USER_ID_NIL {
+            if userId == Event.User.USER_ID_NIL {
                 analyticsClient.updateUserId(nil)
             } else {
-                analyticsClient.updateUserId(identityId)
+                analyticsClient.updateUserId(userId)
             }
         }
         analyticsClient.updateUserAttributes()

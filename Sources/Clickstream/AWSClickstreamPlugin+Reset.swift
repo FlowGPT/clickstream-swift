@@ -5,10 +5,8 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-import Amplify
-
 extension AWSClickstreamPlugin {
-    func reset(onComplete: @escaping BasicClosure) {
+    func reset() {
         if clickstream != nil {
             clickstream = nil
         }
@@ -27,6 +25,5 @@ extension AWSClickstreamPlugin {
             networkMonitor.stopMonitoring()
             networkMonitor = nil
         }
-        onComplete()
     }
 }
