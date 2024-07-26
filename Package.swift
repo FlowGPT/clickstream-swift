@@ -14,8 +14,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/FlowGPT/amplify-swift.git"),
-        .package(url: "https://github.com/FlowGPT/SQLite.swift.git"),
+        .package(url: "https://github.com/FlowGPT/amplify-swift.git", exact: "2.36.1"),
+        .package(url: "https://github.com/FlowGPT/SQLite.swift.git", exact: "0.15.3"),
         .package(url: "https://github.com/1024jp/GzipSwift", exact: "5.2.0"),
         .package(url: "https://github.com/httpswift/swifter", exact: "1.5.0")
     ],
